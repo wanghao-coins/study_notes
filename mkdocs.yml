@@ -1,4 +1,5 @@
-site_name: 学习笔记
+site_name: 绕路也是路 · 学习笔记
+site_description: 嵌入式 | 编程 | 电能表 | 硬件设计 | 思考 · 长期知识库
 site_url: https://wanghao-coins.github.io/study-notes/
 
 theme:
@@ -6,36 +7,54 @@ theme:
   language: zh
   features:
     - navigation.instant
-    - navigation.tracking
     - navigation.tabs
     - navigation.sections
     - navigation.expand
     - toc.integrate
     - content.code.copy
-    - content.tabs.link
-    - header.autohide
+    - navigation.top
     - search.suggest
     - search.highlight
-    - search.share
+    - content.tabs.link
+    - header.autohide
+    - content.action.edit
+    - content.action.view
   palette:
     - scheme: default
       primary: indigo
-      accent: pink
+      accent: teal
     - scheme: slate
       primary: indigo
-      accent: pink
+      accent: teal
       toggle:
         icon: material/weather-night
         name: 深色模式
   font:
     text: Noto Sans SC
     code: JetBrains Mono
-  nav:
-    - 首页: index.md
-    - 工作:
-        - 工作笔记: 工作/index.md
-    - 学习:
-        - 学习记录: 学习/index.md
-    - 思考:
-        - 随笔与思考: 思考/index.md
 
+plugins:
+  - search
+  - tags:
+      enabled: true
+  - git-revision-date-localized:
+      type: date
+
+extra:
+  social:
+    - icon: material/github
+      link: https://github.com/wanghao-coins
+    - icon: material/book-open-page-variant
+      link: https://wanghao-coins.github.io/study-notes/
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.mark
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji
+  - toc:
+      permalink: true
