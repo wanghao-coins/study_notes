@@ -1,0 +1,8 @@
+site_name: 学习笔记 Study Notes
+theme:
+  name: material
+nav:
+  - 首页: index.md
+  - 工作: 工作/index.md
+  - 学习: 学习/index.md
+  - 思考: 思考/index.md
