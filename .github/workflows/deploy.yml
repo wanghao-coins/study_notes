@@ -13,6 +13,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -20,37 +21,24 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: "3.x"
 
-      - name: Install MkDocs and dependencies
+      - name: Install MkDocs
         run: |
           pip install mkdocs-material
 
-      - name: Build MkDocs site
+      - name: Build site
         run: mkdocs build --clean
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload artifact for deployment
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
-          path: site
+          path: ./site   # <<=== 必须是 site，不能是整个仓库
 
   deploy:
-    needs: build
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
 
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: github-pages
-
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
