@@ -30,3 +30,12 @@ theme:
   font:
     text: Noto Sans SC
     code: JetBrains Mono
+  nav:
+    - 首页: index.md
+    - 工作:
+        - 工作笔记: 工作/index.md
+    - 学习:
+        - 学习记录: 学习/index.md
+    - 思考:
+        - 随笔与思考: 思考/index.md
+
