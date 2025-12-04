@@ -1,8 +1,32 @@
-site_name: 学习笔记 Study Notes
+site_name: 学习笔记
+site_url: https://wanghao-coins.github.io/study-notes/
+
 theme:
   name: material
-nav:
-  - 首页: index.md
-  - 工作: 工作/index.md
-  - 学习: 学习/index.md
-  - 思考: 思考/index.md
+  language: zh
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - toc.integrate
+    - content.code.copy
+    - content.tabs.link
+    - header.autohide
+    - search.suggest
+    - search.highlight
+    - search.share
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: pink
+    - scheme: slate
+      primary: indigo
+      accent: pink
+      toggle:
+        icon: material/weather-night
+        name: 深色模式
+  font:
+    text: Noto Sans SC
+    code: JetBrains Mono
